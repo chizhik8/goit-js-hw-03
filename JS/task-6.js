@@ -4,6 +4,7 @@
 // которая получает массив объектов и имя продукта(значение свойства name). 
 // Возвращает общую стоимость продукта(цена * количество).
 
+// 6-а Навіщо число приводити до числа?=)
 
 const products = [
   { name: 'Радар', price: 1300, quantity: 4 },
@@ -18,7 +19,7 @@ const calculateTotalPrice = function (allProdcuts, productName) {
     let totalPrice;
     for (const product of allProdcuts) {
         if (product.name === productName) {
-            totalPrice = Number(product.price) * Number(product.quantity)
+            totalPrice = product.price * product.quantity;
         };
      };
 

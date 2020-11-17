@@ -4,11 +4,14 @@
 // Функция считает общую сумму запрплаты работников и возращает ее. 
 // Каждое поле объекта, передаваемого в функцию, имеет вид "имя": "зарплата".
 
+// у 4-ій так само 
+// (не треба шукати масив, якщо достатньо перебрати об"єкт)
 
 const countTotalSalary = function (employees) {
-    const employeesSalary = Object.values(employees);
     let totalSalary = 0;
-    for (const salary of employeesSalary) { totalSalary += salary};
+  for (let salary in employees) {
+    totalSalary += employees[salary];
+  };
     return totalSalary;
 
 };

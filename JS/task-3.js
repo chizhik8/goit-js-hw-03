@@ -8,13 +8,16 @@
 // Сотрудники и кол - во выполненых задач содержатся как 
 // свойства объекта в формате "имя": "кол-во задач".
 
+// у 3-ій краще замість for використати for in 
+// (не помилка, але порада, спрощує виконання задачі)
+
 const findBestEmployee = function(employees) {
     const employeesValues = Object.values(employees);
     const employeesKey = Object.keys(employees);
 
     let maxLevel = 0;
     let bestEmployee;
-    for (let i = 0; i < employeesValues.length; i += 1) {
+    for (let i in employeesValues) {
         if (maxLevel < employeesValues[i]) {
             maxLevel = employeesValues[i];
             bestEmployee = employeesKey[i];
