@@ -1,29 +1,17 @@
 'use strict';
 
-// Напиши функцию findBestEmployee(employees), 
-// которая принимает объект сотрудников и 
-// возвращает имя самого продуктивного
-// (который выполнил больше всех задач).
-
-// Сотрудники и кол - во выполненых задач содержатся как 
-// свойства объекта в формате "имя": "кол-во задач".
-
-// у 3-ій краще замість for використати for in 
-// (не помилка, але порада, спрощує виконання задачі)
-
 const findBestEmployee = function(employees) {
-    const employeesValues = Object.values(employees);
-    const employeesKey = Object.keys(employees);
 
-    let maxLevel = 0;
-    let bestEmployee;
-    for (let i in employeesValues) {
-        if (maxLevel < employeesValues[i]) {
-            maxLevel = employeesValues[i];
-            bestEmployee = employeesKey[i];
-        };  
+  let maxLevel = 0;
+  let bestEmployee;
+  for (let i in employees) {
+    if (maxLevel < employees[i]) {
+      maxLevel = employees[i];
+      bestEmployee = i;
+      };
+      
     };
-    return bestEmployee;
+return bestEmployee;
 };
 
 console.log(

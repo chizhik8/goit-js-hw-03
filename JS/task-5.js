@@ -1,13 +1,5 @@
 'use strict';
 
-// Напиши функцию getAllPropValues(arr, prop), которая получает 
-// массив объектов и имя свойства.Возвращает массив значений определенного 
-// свойства prop из каждого объекта в массиве.
-
-// 5-а якби використала звернення obj[prop] 
-// - не довелося б писати стільки перевірок.Спробуй спростити
-
-
 const products = [
   { name: 'Радар', price: 1300, quantity: 4 },
   { name: 'Сканер', price: 2700, quantity: 3 },
@@ -18,11 +10,9 @@ const products = [
 const getAllPropValues = function (arr, prop) {
     let allPropValues = [];
     for (const obj of arr) { 
-        for (let key in obj) { 
-            if (key === prop) {allPropValues.push(obj[key]) };
-        };
+        if (obj[prop]) {allPropValues.push(obj[prop]) };
+    
     };
-
     return allPropValues;
 };
 
